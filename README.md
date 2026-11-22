@@ -1,5 +1,3 @@
-# Jagannath-behera
-
 # Hi, I'm Jagannath Behera 👋
 
 ### Senior Software Engineer | Java Backend | Cloud | AI Engineering
