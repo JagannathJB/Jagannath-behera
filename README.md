@@ -1,3 +1,4 @@
+
 # Hi, I'm Jagannath Behera 👋
 
 ### Senior Software Engineer | Java Backend | Cloud | AI Engineering
@@ -50,5 +51,5 @@ Enterprise course registration and waitlist system.
 
 ## 🔗 Connect With Me
 
-- LinkedIn: https://www.linkedin.com/in/jaganath-behera/
-- GitHub: https://github.com/JagannathJB/Jagannath-behera
+- LinkedIn: YOUR_LINKEDIN_URL
+- GitHub: YOUR_GITHUB_URL
