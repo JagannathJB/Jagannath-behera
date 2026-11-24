@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: finpilot-backend
+  config:
+    # Reuse the repo-root .env (same file Docker Compose reads) when started from backend/.
+    import: optional:file:../.env[.properties]
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DB:finpilot}
+    username: ${POSTGRES_USER:finpilot}
+    password: ${POSTGRES_PASSWORD}   # no default on purpose: fail fast instead of using a baked-in secret
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate             # Flyway owns the schema; Hibernate only verifies it
+  flyway:
+    enabled: true
+
+finpilot:
+  payments:
+    max-amount: ${MAX_PAYMENT_AMOUNT:1000000}
+  seed:
+    enabled: ${SEED_ENABLED:false}
+    count: ${SEED_COUNT:500}
+
+logging:
+  pattern:
+    level: "%5p [%X{correlationId:-}]"
+
+server:
+  port: ${SERVER_PORT:8080}
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
